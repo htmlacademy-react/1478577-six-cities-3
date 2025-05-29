@@ -14,4 +14,4 @@ root.render(
   </React.StrictMode>
 );
 
-export default OFFER_COUNTER;
+
