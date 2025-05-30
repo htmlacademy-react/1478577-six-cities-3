@@ -1,16 +1,16 @@
 import Main from '../pages/main-page';
 import Login from '../pages/login-page';
-import Favorites from '../pages/favorites-page';
+import Favorites from '../pages/favorite-page';
 import Offer from '../pages/offer-page';
 import NotFoundPage from '../pages/not-found-page';
 import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
-  Router
+  Link
 } from 'react-router-dom';
-import { AppRoute } from '../const';
+import { AppRoute, AuthorizationStatus } from '../const';
+import PrivateRote from './private-rote';
 
 type AppProps = {
   offerCounter: number;
@@ -30,23 +30,23 @@ function App({ offerCounter }: AppProps) {
         />
         <Route
           path={AppRoute.Favorites}
-          element={<Favorites />}
+          element={(
+            <PrivateRote authorizationStatus={AuthorizationStatus.NoAuth}>
+              <Favorites />
+            </PrivateRote>
+          )}
         />
         <Route
           path={AppRoute.Offer}
           element={<Offer />}
         />
-
         <Route
           path="*"
           element={<NotFoundPage />}
         />
 
       </Routes>
-
-
     </BrowserRouter>
-
   );
 }
 
