@@ -9,5 +9,4 @@ function App({offerCounter}:AppProps) {
     <Main offerCounter={offerCounter}/>
   );
 }
-
 export default App;
