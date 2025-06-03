@@ -7,7 +7,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link
 } from 'react-router-dom';
 import { AppRoute, AuthorizationStatus } from '../const';
 import PrivateRote from './private-rote';
